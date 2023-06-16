@@ -8,13 +8,17 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>Funnel Hq Assignment 📝</header>
+    <header>
+      <code>Drag & Drop Project 📝</code>
+      <button onclick="window.location.reload()" class="btn" title="Reset">
+        Reset 🔃
+      </button>
+    </header>
 
     <div class="parent">
       <div class="main">
         <div class="box left">
-          <h2 style="text-align: center">Container 1</h2>
-          <hr />
+          <h2>Container 1</h2>
           <div class="item" draggable="true">📌 Item 1</div>
           <div class="item" draggable="true">📌 Item 2</div>
           <div class="item" draggable="true">📌 Item 3</div>
@@ -22,21 +26,25 @@
           <div class="item" draggable="true">📌 Item 5</div>
         </div>
         <div class="box right">
-          <h2 style="text-align: center">Container 2</h2>
-          <hr />
+          <h2>Container 2</h2>
         </div>
-        <button onclick="window.location.reload()" class="btn">Reset 🔃</button>
       </div>
     </div>
+
+    <footer class="footer">
+      Created by
+      <a href="https://github.com/Abhi2474" title="Github link"
+        >Abhishek Gauttam</a
+      >
+      🙂
+    </footer>
 
     <dialog id="dialog">
       dropped successfully !! 🎉
       <button class="dBtn" onclick="dialog.close()">Close ❌</button>
     </dialog>
 
-    <footer class="footer">
-      Created by <a href="https://github.com/Abhi2474">Abhishek Gauttam</a> 🙂
-    </footer>
+    <div class="toastBox"></div>
 
     <script src="script.js"></script>
   </body>

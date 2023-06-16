@@ -2,6 +2,7 @@ const left = document.querySelector(".left");
 const right = document.querySelector(".right");
 const items = document.querySelectorAll(".item");
 const dialog = document.getElementById("dialog");
+const toastBox = document.querySelector(".toastBox");
 
 // created the element for the success message
 const msg = document.createElement("span");
@@ -26,9 +27,10 @@ items.forEach((item) => {
 
     right?.addEventListener("drop", (e) => {
       right.appendChild(selected);
+      showToast(selected.innerText);
       selected = null;
       dialog?.showModal();
-      item.style.color = "#FF0060";
+      item.style.color = "darkred";
     });
 
     // same for the left container
@@ -38,9 +40,23 @@ items.forEach((item) => {
 
     left?.addEventListener("drop", (e) => {
       left.appendChild(selected);
+      showToast(selected.innerText);
       selected = null;
-      item.style.color = "#116D6E";
+      item.style.color = "darkblue";
       dialog?.showModal();
     });
   });
 });
+
+// toast notification function
+function showToast(msg) {
+  let toast = document.createElement("div");
+  toast.classList.add("toast");
+  toast.textContent = `${msg} added successfully !!`;
+
+  toastBox?.appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 4000);
+}
